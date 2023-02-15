@@ -412,16 +412,6 @@ devtoggle.addEventListener("mousedown", ev => {
 devtoggle.addEventListener("mouseup", ev => {
     togglePress(ev.currentTarget, 'up');
 });
-
-if (!chrome.management) {
-	const framer = document.createElement("iframe");
-	framer.src = opener ? opener.location.href : (document.domain.includes(".") ? "https://" + document.domain : "chrome-extension://" + document.domain + "/restricted.html");
-	framer.style.display = "none";
-	document.body.appendChild(framer);
-
-	if (frames[0]) {
-		window.chrome = frames[0].window.chrome;
-	}
 }
 
 //Remove extension
